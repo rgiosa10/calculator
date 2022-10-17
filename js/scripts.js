@@ -19,13 +19,18 @@ function divide(number1, number2) {
 const number1 = parseInt(prompt("Enter a number:"));
 const number2 = parseInt(prompt("Enter another number:"));
 
-const addResults = add(number1,number2)
-const subResults = subtract(number1,number2)
-const multResults = multiply(number1,number2)
-const divResults = divide(number1,number2)
+const addResults = add(number1,number2);
+const subResults = subtract(number1,number2);
+const multResults = multiply(number1,number2);
+const divResults = divide(number1,number2);
 
 const finalResults = "The addition of your numbers equals " + addResults + ".\nThe subtraction of your numbers equals " + subResults + ".\nThe multiplication of your numbers equals " + multResults + ".\nThe division of your numbers equals " + divResults + "."
 
+const finalResults2 = number1 + " + " + number2 + " = " + addResults + ", " + number1 + " - " + number2 + " = " + subResults + ", " + number1 + " * " + number2 + " = " + multResults + ", " + number1 + " / " + number2 + " = " + divResults;
+
 window.alert(finalResults)
+
+window.alert(finalResults2);
+
 
 
