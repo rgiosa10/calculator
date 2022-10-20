@@ -1,28 +1,57 @@
 // business logic
-function add(number1, number2) {
-  return number1 + number2;
+function add(number1Input, number2Input) {
+  return number1Input + number2Input;
 }
 
-function subtract(number1, number2) {
-  return number1 - number2;
+function subtract(number1Input, number2Input) {
+  return number1Input - number2Input;
 }
 
-function multiply(number1, number2) {
-  return number1 * number2;
+function multiply(number1Input, number2Input) {
+  return number1Input * number2Input;
 }
 
-function divide(number1, number2) {
-  return number1 / number2;
+function divide(number1Input, number2Input) {
+  return number1Input / number2Input;
+}
+
+function calculate() {
+  if (operatorInput === "add") {
+    result = add();
+  } else if (operatorInput === "subtract") {
+    result = subtract();
+  } else if (operatorInput === "multiply") {
+    result = multiply();
+  } else if (operatorInput === "divide") {
+    result = divide();
+  }
+  document.getElementById("output").innerText = result;
 }
 
 //user interface logic
-const number1 = parseInt(prompt("Enter a number:"));
-const number2 = parseInt(prompt("Enter another number:"));
+function getFormInputs () {
+  const number1Input = parseInt(document.getElementByID("input1").value);
+  const number2Input = parseInt(document.getElementByID("input2").value);
+  const operatorInput = document.querySelector("input[name='operator']:checked").value;
+};
 
-const addResults = add(number1,number2);
-const subResults = subtract(number1,number2);
-const multResults = multiply(number1,number2);
-const divResults = divide(number1,number2);
+
+
+window.addEventListener("load", function() {
+  let form = querySelector("form");
+
+  window.addEventListener("submit", function(event) {
+    event.preventDefault()
+    form.addEventListener("submit", calculate) {
+      form.addEventListener("submit", getFormInputs);
+    };
+    
+
+  });
+  
+
+
+})
 
 const finalResults = "The addition of your numbers equals " + addResults + ".\nThe subtraction of your numbers equals " + subResults + ".\nThe multiplication of your numbers equals " + multResults + ".\nThe division of your numbers equals " + divResults + "."
 
@@ -32,5 +61,7 @@ window.alert(finalResults)
 
 window.alert(finalResults2);
 
+window.addEventListener("load", function(){
 
+});
 

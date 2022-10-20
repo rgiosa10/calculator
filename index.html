@@ -1,14 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
-  <link rel="stylesheet" href="css/style.css" type="text/css">
-  <script src="js/scripts.js"></script>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculator</title>
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <script src="js/scripts.js"></script>
 </head>
 <body>
   <h1>Calculator</h1>
+  <form id="calculator">
+    <label for="input1">1st number:</label>
+    <input id="input1" type="text">
+    <label for="input2">2nd number:</label>
+    <input id="input2" type="text">
+
+    <label>
+      <input type="radio" name="operator" value="add">
+      add
+    </label>
+    <label>
+      <input type="radio" name="operator" value="subtract">
+      subtract
+    </label>
+    <label>
+      <input type="radio" name="operator" value="multiply">
+      multiply
+    </label>
+    <label>
+      <input type="radio" name="operator" value="divide">
+      divide
+    </label>
+
+    <button type="submit" class="btn">Go!</button>
+  </form>
+
+  <h2>Results</h2>
+  <p id="output"></p>
 </body>
 </html>
