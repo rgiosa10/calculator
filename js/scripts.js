@@ -1,67 +1,79 @@
 // business logic
-function add(number1Input, number2Input) {
-  return number1Input + number2Input;
+function add(num1, num2) {
+  return num1 + num2;
 }
 
-function subtract(number1Input, number2Input) {
-  return number1Input - number2Input;
+function subtract(num1, num2) {
+  return num1 - num2;
 }
 
-function multiply(number1Input, number2Input) {
-  return number1Input * number2Input;
+function multiply(num1, num2) {
+  return num1 * num2;
 }
 
-function divide(number1Input, number2Input) {
-  return number1Input / number2Input;
+function divide(num1, num2) {
+  return num1 / num2;
 }
 
 function calculate() {
+  const number1Input = parseInt(document.getElementById("input1").value);
+  const number2Input = parseInt(document.getElementById("input2").value);
+  const operatorInput = document.querySelector("input[name='operator']:checked").value;
+
   if (operatorInput === "add") {
-    result = add();
+    result = add(number1Input, number2Input);
   } else if (operatorInput === "subtract") {
-    result = subtract();
+    result = subtract(number1Input, number2Input);
   } else if (operatorInput === "multiply") {
-    result = multiply();
+    result = multiply(number1Input, number2Input);
   } else if (operatorInput === "divide") {
-    result = divide();
+    result = divide(number1Input, number2Input);
   }
-  document.getElementById("output").innerText = result;
+  document.getElementById("output").innerText = "The answer is " + result;
 }
 
 //user interface logic
-function getFormInputs () {
-  const number1Input = parseInt(document.getElementByID("input1").value);
-  const number2Input = parseInt(document.getElementByID("input2").value);
-  const operatorInput = document.querySelector("input[name='operator']:checked").value;
-};
-
-
 
 window.addEventListener("load", function() {
-  let form = querySelector("form");
+  let form = document.querySelector("form");
 
-  window.addEventListener("submit", function(event) {
-    event.preventDefault()
-    form.addEventListener("submit", calculate) {
-      form.addEventListener("submit", getFormInputs);
-    };
-    
-
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
   });
+
+  // form.addEventListener("submit", getFormInputs);
+
+  form.addEventListener("submit", calculate);
+
+    // event.preventDefault()
+    // form.addEventListener("submit", getFormInputs);
+    // form.addEventListener("submit", calculate);
+    
+  });
+
+
+// Separating calculation and obtaining the form inputs, using arrays
+
+  // function calculate(array) {
+  //   if (array[2] === "add") {
+  //     result = add(array[0], array[1]);
+  //   } else if (array[2] === "subtract") {
+  //     result = subtract(array[0], array[1]);
+  //   } else if (array[2] === "multiply") {
+  //     result = multiply(array[0], array[1]);
+  //   } else if (array[2] === "divide") {
+  //     result = divide(array[0], array[1]);
+  //   }
+  //   document.getElementById("output").innerText = "The answer is " + result;
+  // }
   
+  // function getFormInputs() {
+  //   const number1Input = parseInt(document.getElementByID("input1").value);
+  //   const number2Input = parseInt(document.getElementByID("input2").value);
+  //   const operatorInput = document.querySelector("input[name='operator']:checked").value;
+  
+  //   return [number1Input,number2Input,operatorInput];
+  // };
 
-
-})
-
-const finalResults = "The addition of your numbers equals " + addResults + ".\nThe subtraction of your numbers equals " + subResults + ".\nThe multiplication of your numbers equals " + multResults + ".\nThe division of your numbers equals " + divResults + "."
-
-const finalResults2 = number1 + " + " + number2 + " = " + addResults + ", " + number1 + " - " + number2 + " = " + subResults + ", " + number1 + " * " + number2 + " = " + multResults + ", " + number1 + " / " + number2 + " = " + divResults;
-
-window.alert(finalResults)
-
-window.alert(finalResults2);
-
-window.addEventListener("load", function(){
-
-});
-
+  // Then can run calculate(getFormInputs())
+  
